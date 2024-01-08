@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "505761053231",
+    "project_id": "kotlin-auth-with-s-6057e",
+    "storage_bucket": "kotlin-auth-with-s-6057e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505761053231:android:51af1804aeaa90661924da",
+        "android_client_info": {
+          "package_name": "com.fahad.kotlin_auth_with_googles"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClt54NhgkY246nQD2V3NpMbbjS37A47Ew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
