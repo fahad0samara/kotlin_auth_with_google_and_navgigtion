@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-  namespace = "com.fahad.kotlin_auth_with_googles"
+  namespace = "com.fahad.kotlin_with_googles"
   compileSdk = 34
 
   defaultConfig {
-    applicationId = "com.fahad.kotlin_auth_with_googles"
+    applicationId = "com.fahad.kotlin_with_googles"
     minSdk = 29
     targetSdk = 34
     versionCode = 1
@@ -60,6 +60,8 @@ dependencies {
   implementation(libs.ui.graphics)
   implementation(libs.ui.tooling.preview)
   implementation(libs.material3)
+  implementation(libs.play.services.auth)
+  implementation(libs.firebase.firestore.ktx)
 
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.test.ext.junit)
@@ -70,6 +72,7 @@ dependencies {
   debugImplementation(libs.ui.test.manifest)
 
 
+  implementation ("com.google.accompanist:accompanist-navigation-animation:0.23.0")
 
 
 

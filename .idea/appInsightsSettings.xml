@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.fahad.kotlin_with_googles" />
+                  <option name="mobileSdkAppId" value="1:568222545790:android:87de23c31c30b1e6d9a52f" />
+                  <option name="projectId" value="warm-utility-405406" />
+                  <option name="projectNumber" value="568222545790" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

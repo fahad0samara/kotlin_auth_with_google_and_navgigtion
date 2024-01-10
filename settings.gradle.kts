@@ -19,5 +19,5 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "kotlin-auth-with-googles"
+rootProject.name = "kotlin-with-googles"
 include(":app")
