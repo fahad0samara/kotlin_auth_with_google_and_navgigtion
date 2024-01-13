@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-android:name="com.fahad.kotlin_auth_with_googles.FirebaseSignInWithGoogleApp"
+        android:name="com.fahad.kotlin_auth_with_googles.FirebaseSignInWithGoogleApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,9 +14,9 @@ android:name="com.fahad.kotlin_auth_with_googles.FirebaseSignInWithGoogleApp"
         android:theme="@style/Theme.Kotlinauthwithgoogles"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
+
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Kotlinauthwithgoogles">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

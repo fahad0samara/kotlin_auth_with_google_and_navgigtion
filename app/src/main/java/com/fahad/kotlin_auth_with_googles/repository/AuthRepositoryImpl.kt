@@ -1,5 +1,16 @@
-package ro.alexmamo.firebasesigninwithgoogle.data.repository
+package com.fahad.kotlin_auth_with_googles.repository
 
+import com.fahad.kotlin_auth_with_googles.domain.model.Response
+import com.fahad.kotlin_auth_with_googles.domain.repository.AuthRepository
+import com.fahad.kotlin_auth_with_googles.domain.repository.OneTapSignInResponse
+import com.fahad.kotlin_auth_with_googles.domain.repository.SignInWithGoogleResponse
+import com.fahad.kotlin_auth_with_googles.ui.Constants.CREATED_AT
+import com.fahad.kotlin_auth_with_googles.ui.Constants.DISPLAY_NAME
+import com.fahad.kotlin_auth_with_googles.ui.Constants.EMAIL
+import com.fahad.kotlin_auth_with_googles.ui.Constants.PHOTO_URL
+import com.fahad.kotlin_auth_with_googles.ui.Constants.SIGN_IN_REQUEST
+import com.fahad.kotlin_auth_with_googles.ui.Constants.SIGN_UP_REQUEST
+import com.fahad.kotlin_auth_with_googles.ui.Constants.USERS
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.SignInClient
 import com.google.firebase.auth.AuthCredential
@@ -8,18 +19,9 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FieldValue.serverTimestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
-import com.fahad.kotlin_auth_with_googles.core.Constants.CREATED_AT
-import com.fahad.kotlin_auth_with_googles.core.Constants.DISPLAY_NAME
-import com.fahad.kotlin_auth_with_googles.core.Constants.EMAIL
-import com.fahad.kotlin_auth_with_googles.core.Constants.PHOTO_URL
-import com.fahad.kotlin_auth_with_googles.core.Constants.SIGN_IN_REQUEST
-import com.fahad.kotlin_auth_with_googles.core.Constants.SIGN_UP_REQUEST
-import com.fahad.kotlin_auth_with_googles.core.Constants.USERS
-import com.fahad.kotlin_auth_with_googles.domain.model.Response.Failure
-import com.fahad.kotlin_auth_with_googles.domain.model.Response.Success
-import com.fahad.kotlin_auth_with_googles.domain.repository.AuthRepository
-import com.fahad.kotlin_auth_with_googles.domain.repository.OneTapSignInResponse
-import com.fahad.kotlin_auth_with_googles.domain.repository.SignInWithGoogleResponse
+
+
+
 import javax.inject.Inject
 import javax.inject.Named
 import javax.inject.Singleton
@@ -39,13 +41,13 @@ class AuthRepositoryImpl @Inject constructor(
     override suspend fun oneTapSignInWithGoogle(): OneTapSignInResponse {
         return try {
             val signInResult = oneTapClient.beginSignIn(signInRequest).await()
-            Success(signInResult)
+          Response.Success(signInResult)
         } catch (e: Exception) {
             try {
                 val signUpResult = oneTapClient.beginSignIn(signUpRequest).await()
-                Success(signUpResult)
+              Response.Success(signUpResult)
             } catch (e: Exception) {
-                Failure(e)
+              Response.Failure(e)
             }
         }
     }
@@ -59,9 +61,9 @@ class AuthRepositoryImpl @Inject constructor(
             if (isNewUser) {
                 addUserToFirestore()
             }
-            Success(true)
+          Response.Success(true)
         } catch (e: Exception) {
-            Failure(e)
+          Response.Failure(e)
         }
     }
 
@@ -77,5 +79,7 @@ fun FirebaseUser.toUser() = mapOf(
     DISPLAY_NAME to displayName,
     EMAIL to email,
     PHOTO_URL to photoUrl?.toString(),
-    CREATED_AT to serverTimestamp()
+    CREATED_AT to serverTimestamp(),
+
+
 )

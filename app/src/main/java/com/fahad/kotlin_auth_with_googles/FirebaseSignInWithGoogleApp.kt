@@ -1,9 +1,7 @@
-package com.fahad.kotlin_with_googles
+package com.fahad.kotlin_auth_with_googles
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class FirebaseSignInWithGoogleApp: Application(){
-
-}
+class FirebaseSignInWithGoogleApp : Application()
